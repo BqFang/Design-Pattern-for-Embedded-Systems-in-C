@@ -56,3 +56,37 @@ void Queue_insert(Queue* const me,int k)
         ++me->size;
     }
 }
+
+/* operation remove */
+int Queue_remove(Queue* const me)
+{
+    int value = -9999;  /* sentinel value */
+    if(!me->isEmpty(me))
+    {
+        value = me->buffer[me->tail];
+        me->tail = (me->tail+1) % QUEUE_SIZE;
+        -me->size;
+    }
+    return value;
+}
+
+Queue *Queue_Create(void)
+{
+    Queue *me = (Queue *)malloc(sizeof(Queue));
+
+    if(me != NULL)
+    {
+        Queue_Init(me, Queue_isFull, Queue_isEmpty, Queue_getSize,
+            Queue_insert,Queue_remove);
+    }
+    return me;
+}
+
+void Queue_Destory(Queue * const me)
+{
+    if(me != NULL)
+    {
+        Queue_Cleanup(me);
+    }
+    free(me);
+}

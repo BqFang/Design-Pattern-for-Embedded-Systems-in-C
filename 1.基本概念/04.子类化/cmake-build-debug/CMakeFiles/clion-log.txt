@@ -1,0 +1,1 @@
+"D:\Clion\APP\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Clion/APP/CLion 2021.3.4/bin/ninja/win/ninja.exe" -G Ninja F:\GithubFiles\Design-Pattern-for-Embedded-Systems-in-C\1.基本概念\04.子类化

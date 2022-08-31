@@ -18,8 +18,21 @@ struct Queue{
 };
 
 /* Constructors and destructors */
-void Queue_Init(Queue* const me);
+void Queue_Init(Queue* const me, int (*isFullfunction)(Queue* const me),
+                int (*isEmptyfunction)(Queue* const me),
+                int (*getSizefunction)(Queue* const me),
+                void (*insertfunction)(Queue* const me, int k),
+                int (*removefunction)(Queue* const me));
+void Queue_Cleanup(Queue* const me);
+int Queue_isFull(Queue* const me);
+int Queue_isEmpty(Queue* const me);
+int Queue_getSize(Queue* me);
+void Queue_insert(Queue* const me,int k);
+int Queue_remove(Queue* const me);
+Queue *Queue_Create(void);
+void Queue_Destory(Queue * const me);
 
 
 
 #endif /* QUEUE_H_ */
+
